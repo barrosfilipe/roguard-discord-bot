@@ -1,0 +1,22 @@
+{
+  "name": "roguard-discord-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "jest --silent --verbose"
+  },
+  "author": "Filipe Barros",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0",
+    "jsdom": "^13.1.0",
+    "tabletojson": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.9"
+  }
+}
