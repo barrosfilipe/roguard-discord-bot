@@ -45,9 +45,6 @@ const getItemUrl = async itemName => {
 };
 
 const getCommonInfo = async (itemUrl, dom) => {
-  const itemName = dom.window.document.querySelector('#content > div > h1')
-    .textContent;
-
   let dropInfo = await getDropInfo(dom);
 
   if (!dropInfo) {

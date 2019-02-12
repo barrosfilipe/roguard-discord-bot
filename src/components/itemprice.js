@@ -35,7 +35,7 @@ const getExchangePrice = async itemName => {
         '#root > div.container.pt-3 > div:nth-child(1) > div:nth-child(3) > div > div > div.col-12.col-md-3.col-lg-2.d-flex.flex-column.flex-fill.justify-content-between > div.d-flex.flex-column > div.text-muted.mt-1 > abbr > time'
       ).textContent;
 
-      if (name)
+      if (name) {
         return {
           name: name,
           thumb: img,
@@ -43,9 +43,12 @@ const getExchangePrice = async itemName => {
           volume: volume,
           update: update
         };
+      }
     } catch (err) {
       return { error: true };
     }
+
+    return false;
   });
 
   await browser.close();
