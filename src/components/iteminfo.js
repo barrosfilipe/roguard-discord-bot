@@ -49,14 +49,9 @@ const getCommonInfo = async (itemUrl, dom) => {
     .textContent;
 
   let dropInfo = await getDropInfo(dom);
-  let priceInfo = await getExchangeGlobalPrice(itemName);
 
   if (!dropInfo) {
     dropInfo = false;
-  }
-
-  if (!priceInfo) {
-    priceInfo = false;
   }
 
   return new Promise((resolve, reject) => {
@@ -108,9 +103,7 @@ const getCommonInfo = async (itemUrl, dom) => {
               tablesAsJson[0].map(key => key['0']).indexOf('Storageable')
             ]['1'],
 
-          drop: dropInfo ? dropInfo.join(', ') : null,
-
-          exchange: priceInfo.data.data.price ? priceInfo.data.data : null
+          drop: dropInfo ? dropInfo.join(', ') : null
         };
 
         resolve(tableInfo);
