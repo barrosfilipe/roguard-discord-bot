@@ -4,6 +4,7 @@ const tabletojson = require('tabletojson');
 const jsdom = require('jsdom');
 const utils = require('./utils');
 const { JSDOM } = jsdom;
+const fetch = require('node-fetch');
 
 const itemNotFoundMessages =
   utils.itemNotFoundMessages[
@@ -45,10 +46,18 @@ const getItemUrl = async itemName => {
 };
 
 const getCommonInfo = async (itemUrl, dom) => {
+  const itemName = dom.window.document.querySelector('#content > div > h1')
+    .textContent;
+
   let dropInfo = await getDropInfo(dom);
+  let priceInfo = await getExchangeGlobalPrice(itemName);
 
   if (!dropInfo) {
     dropInfo = false;
+  }
+
+  if (!priceInfo) {
+    priceInfo = false;
   }
 
   return new Promise((resolve, reject) => {
@@ -100,7 +109,9 @@ const getCommonInfo = async (itemUrl, dom) => {
               tablesAsJson[0].map(key => key['0']).indexOf('Storageable')
             ]['1'],
 
-          drop: dropInfo ? dropInfo.join(', ') : null
+          drop: dropInfo ? dropInfo.join(', ') : null,
+
+          exchange: priceInfo.data.data.price ? priceInfo.data.data : null
         };
 
         resolve(tableInfo);
@@ -126,6 +137,20 @@ const getDropInfo = dom => {
       .map(div => `(${div.childNodes[2].childNodes[5].textContent})`);
 
     return monster.map((mob, i) => `${mob} ${rate[i]}`);
+  } catch (err) {
+    return false;
+  }
+};
+
+const getExchangeGlobalPrice = async itemName => {
+  try {
+    const itemPrice = await fetch(
+      `https://api-global.poporing.life/get_latest_price/${itemName
+        .toLowerCase()
+        .replace(/ /g, '_')}`
+    );
+
+    return itemPrice.json();
   } catch (err) {
     return false;
   }

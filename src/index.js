@@ -16,6 +16,7 @@ client.on('message', msg => {
   require('./commands/help')(msg, command);
   require('./commands/dropinfo')(msg, command);
   require('./commands/iteminfo')(msg, command);
+  require('./commands/itemprice')(msg, command);
   require('./commands/mobinfo')(msg, command);
   require('./commands/cardinfo')(msg, command);
   require('./commands/mapinfo')(msg, command);
