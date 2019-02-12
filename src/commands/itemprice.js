@@ -1,10 +1,10 @@
 'use strict';
 
 const Discord = require('discord.js');
-const iteminfo = require('../components/iteminfo');
+const itemprice = require('../components/itemprice');
 const utils = require('../components/utils');
 
-const itemNotFoundMessages =
+const errorMessage =
   utils.itemNotFoundMessages[
     Math.floor(Math.random() * utils.itemNotFoundMessages.length)
   ];
@@ -12,28 +12,28 @@ const itemNotFoundMessages =
 module.exports = async (msg, command) => {
   if (command === '!itemprice') {
     const itemSearch = msg.content.split(command)[1].trim();
-    const item = await iteminfo(itemSearch);
+    const item = await itemprice(itemSearch);
 
-    if (item.exchange) {
+    if (!item.error) {
       const embed = new Discord.RichEmbed()
         .setTitle('About Item')
-        .setDescription(item.desc)
         .setAuthor(`${item.name} (Global)`, item.thumb)
         .setURL(item.url)
         .setColor(0x00ae86)
         .setThumbnail(item.thumb)
-        .addField('Price', item.exchange.price.toLocaleString('en-US') || '?')
-        .addField('Volume', item.exchange.volume.toLocaleString('en-US') || '?')
+        .addField('Price', `${item.price} z`)
+        .addField('Volume', `${item.volume} ea`)
+        .addField('Last Update', `${item.update}`)
 
         .setFooter(
-          'Data provided by ROGuard',
-          'http://file5.ratemyserver.net/items/small/2125.gif'
+          'Data provided by Poporing Life',
+          'http://file5.ratemyserver.net/mobs/1031.gif'
         )
         .setTimestamp();
 
       msg.channel.send({ embed });
     } else {
-      msg.reply(itemNotFoundMessages);
+      msg.reply(errorMessage);
     }
   }
 };

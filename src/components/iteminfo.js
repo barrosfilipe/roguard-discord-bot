@@ -4,7 +4,6 @@ const tabletojson = require('tabletojson');
 const jsdom = require('jsdom');
 const utils = require('./utils');
 const { JSDOM } = jsdom;
-const fetch = require('node-fetch');
 
 const itemNotFoundMessages =
   utils.itemNotFoundMessages[
@@ -137,20 +136,6 @@ const getDropInfo = dom => {
       .map(div => `(${div.childNodes[2].childNodes[5].textContent})`);
 
     return monster.map((mob, i) => `${mob} ${rate[i]}`);
-  } catch (err) {
-    return false;
-  }
-};
-
-const getExchangeGlobalPrice = async itemName => {
-  try {
-    const itemPrice = await fetch(
-      `https://api-global.poporing.life/get_latest_price/${itemName
-        .toLowerCase()
-        .replace(/ /g, '_')}`
-    );
-
-    return itemPrice.json();
   } catch (err) {
     return false;
   }
