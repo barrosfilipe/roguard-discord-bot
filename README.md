@@ -16,6 +16,7 @@ A [Discord](https://discordapp.com/) `BOT` to get data from [ROGuard](https://ww
 | !cardinfo <monster name> | Display monster card information.           |
 | !mapinfo <monster name>  | Display monster map location.               |
 | !iteminfo <item name>    | Display all item information.               |
+| !itemprice <item name>   | Display item price from Global Exchange.    |
 | !joke                    | Random `Frost Joker` skill from Bard class. |
 
 > Note: All output messages are in `Brazilian Portuguese` only.
