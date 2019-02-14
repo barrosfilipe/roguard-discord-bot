@@ -14,6 +14,7 @@ client.on('message', msg => {
   const command = msg.content.split(' ')[0].trim();
 
   require('./commands/help')(msg, command);
+  require('./commands/stats')(client, msg, command);
   require('./commands/dropinfo')(msg, command);
   require('./commands/iteminfo')(msg, command);
   require('./commands/itemprice')(msg, command);

@@ -70,6 +70,7 @@ const getMobUrl = async mobName => {
     const dom = await JSDOM.fromURL(
       `https://www.roguard.net/db/search/?search=${mobName}`
     );
+
     const mobUrl = dom.window.document.querySelector(
       '#content > div > table:nth-child(4) > tbody > tr > td:nth-child(2) > div:nth-child(1) > a'
     ).href;
