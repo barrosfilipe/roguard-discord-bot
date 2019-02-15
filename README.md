@@ -2,7 +2,11 @@
 
 > Unofficial Discord Bot
 
-<p align="center"><img src="https://i.imgur.com/ZEqro5O.png" alt="ROGuard Discord Bot"></p>
+<p align="center">
+<a href="https://discordbots.org/bot/537246810184613888" >
+  <img src="https://discordbots.org/api/widget/537246810184613888.svg" alt="ROGuard" />
+</a>
+</p>
 
 A [Discord](https://discordapp.com/) `BOT` to get data from [ROGuard](https://www.roguard.net/) website, a [Ragnarok M: Eternal Love](https://www.ragnaroketernallove.com/), `monsters`, `items`, `cards`, `equipments` and `maps` database.
 
