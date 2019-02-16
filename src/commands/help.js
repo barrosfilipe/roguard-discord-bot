@@ -17,7 +17,7 @@ module.exports = (msg, command) => {
         'Exibe preço do item (Exchance Global)'
       )
       .addField(
-        ':fallen_leaf:  !dropoinfo <nome do monstro>',
+        ':fallen_leaf:  !dropinfo <nome do monstro>',
         'Exibe drops do monstro'
       )
       .addField(
