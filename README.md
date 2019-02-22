@@ -8,6 +8,10 @@
 </a>
 </p>
 
+<p align="center">
+  <a href="https://www.codacy.com/app/filipebarrossi/roguard-discord-bot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=barrosfilipe/roguard-discord-bot&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/fc2b7052739749c096dc08be68ec3562"/></a>
+</P>
+
 A [Discord](https://discordapp.com/) `BOT` to get data from [ROGuard](https://www.roguard.net/) website, a [Ragnarok M: Eternal Love](https://www.ragnaroketernallove.com/), `monsters`, `items`, `cards`, `equipments` and `maps` database.
 
 # Usage
