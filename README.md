@@ -1,5 +1,7 @@
 # ROGuard - (Ragnarok M: Eternal Love)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2001c6095f4f48db87f48f413d25544e)](https://app.codacy.com/app/filipebarrossi/roguard-discord-bot?utm_source=github.com&utm_medium=referral&utm_content=barrosfilipe/roguard-discord-bot&utm_campaign=Badge_Grade_Dashboard)
+
 > Unofficial Discord Bot
 
 <p align="center">
